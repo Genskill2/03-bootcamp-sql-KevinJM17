@@ -88,7 +88,7 @@ def test_run_delete(db):
         cur.executescript(f.read())
     cur.close()
 
-    items = run_query(db, "select s.name from books b, subjects s, books_subjects bs where b.id = bs.book and s.id = bs.subject and b.title = 'The Great War for Civilisation'");
+    items = run_query(db, "select s.name from books b, subjects s, books_subjects bs where b.id = bs.book and s.id = bs.subject and b.title = 'The Great War for Civilisation'")
     expected = set(["Politics"])
     assert set(x[0] for x in items) == expected
 
