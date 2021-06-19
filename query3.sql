@@ -1,1 +1,1 @@
-select title from books b, subjects s, books_subjects bs where bs.subject = s.id and bs.book = b.id and s.name in ('Technology', 'Politics');
+select b.title from books b, subjects s, books_subjects bs where bs.subject = s.id and bs.book = b.id and s.name in ('Technology', 'Politics');
