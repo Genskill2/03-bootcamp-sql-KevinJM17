@@ -5,17 +5,20 @@ create table publisher(
 );
 
 create table books(
-    id primary key,
+    id integer primary key,
     title text,
+    publisher integer,
     foreign key (publisher) references publisher(id)
 );
 
 create table subjects(
-    id primary key,
+    id integer primary key,
     name text
 );
 
 create table books_subjects(
-   foreign key (book) references books(id),
-   foreign key (subject) references subjects(id)
+    book integer,
+    foreign key (book) references books(id),
+    subject integer,
+    foreign key (subject) references subjects(id)
 );
